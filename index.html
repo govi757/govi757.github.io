@@ -4,49 +4,43 @@
 <head>
     <title>Govind portfolio</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
-<body style="background-color: #1e1e24;">
+<body onscroll="getCurrentActiveClass()" style="background-color: #1e1e24;">
     <noscript>
         <strong>We're sorry but ok doesn't work properly without JavaScript enabled. Please enable it to
             continue.</strong>
     </noscript>
-    <!-- <nav class="navbar navbar-dark bg-dark">
-        <div class="row col-12">
-            <div class="col-sm-6 d-flex">
-                <a class="navbar-brand" href="#">CV</a>
-            </div>
-            <div class="d-flex col-sm-6">
-                <a class="navbar-item" href="#">About</a>
-                <a class="navbar-item" href="#">Projects</a>
-                <a class="navbar-item" href="#">Skills</a>
-                <a class="navbar-item" href="#">Studies</a>
-            </div>
-        </div>
-    </nav> -->
     <div class="col">
         <div class="row">
             <div
-                style="height: 100vh;position: fixed;top:0;width:25%;background:grey;display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                class="sidebar hideOnMob">
 
                 <!-- <div class="col-3"> -->
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Education</a>
-                <a href="#">Skills</a>
-                <a href="#">Projects</a>
+                <a href="#" id="homeLink">Home</a>
+                <a href="#" id="aboutLink">About</a>
+                <!-- <a href="#" id="aboutLink">Education</a> -->
+                <a href="#" id="skillsLink">Skills</a>
+                <a href="#" id="proLink">Projects</a>
                 <!-- </div> -->
 
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-3 hideOnMob"></div>
             <div class="col">
-                <div id="home" class="container  my-5" style="height: 70vh;">
+                <div id="Home" class="container  my-5" style="min-height: 70vh;">
                     <div class="row justify-content-around" style="margin-top: 14%;">
-                        <div class=" d-flex justify-content-center  column flex-column mx-5">
+                        <div class="col align-item-center d-flex justify-content-center showOnMob">
+                            <div style="border-radius: 100%;width: 100%;display: flex;justify-content: center;">
+                                <img style="border-radius: 100%;height: 80%;width: 80%;"
+                                    src="https://scontent.fccj2-1.fna.fbcdn.net/v/t1.0-9/65420725_2144511245675391_3254280725720989696_n.jpg?_nc_cat=109&_nc_sid=85a577&_nc_ohc=_CIVgIewscIAX8Bs7PU&_nc_ht=scontent.fccj2-1.fna&oh=39c812a2e57f9248382c2a558d8fba25&oe=5F17CE05" />
+                            </div>
+                        </div>
+                        <div class=" d-flex justify-content-center column flex-column mx-5">
                             <h2 class="text-left" style="color:white;font-weight: normal;">Govind VE</h2>
                             <h3 class="text-left" style="color:white;font-weight: normal;">Software Developer</h3>
                             <h5 class="text-left" style="color:white;font-weight: normal;">Experience: 2.5 years </h5>
@@ -75,39 +69,21 @@
                                 <img src="https://img.icons8.com/fluent/40/000000/instagram-new.png" class="mx-2" />
                             </div>
 
-
-                            <!-- <div class="row mx-1 my-1" style="color:white;">
-                <img src="./assets/linkedin.png" width="20px" height="20px"/>
-                <span class="text-left mx-2" style="color:white;font-weight: normal;font-size: 15px;">https://www.linkedin.com/in/govind-v-e-577a39b7/</span>
-            </div> -->
-
                         </div>
-                        <div class="col-sm-4 align-item-center d-flex justify-content-center ml-5">
-                            <div style="border-radius: 400px;height: 400px;width: 400px;">
-                                <img style="border-radius: 400px;height: 400px;width: 400px;"
+                        <div class="col-sm-4 align-item-center d-flex justify-content-center hideOnMob">
+                            <div style="border-radius: 100%;height: 70%;width: 100%;">
+                                <img style="border-radius: 100%;height: 100%;width: 100%;"
                                     src="https://scontent.fccj2-1.fna.fbcdn.net/v/t1.0-9/65420725_2144511245675391_3254280725720989696_n.jpg?_nc_cat=109&_nc_sid=85a577&_nc_ohc=_CIVgIewscIAX8Bs7PU&_nc_ht=scontent.fccj2-1.fna&oh=39c812a2e57f9248382c2a558d8fba25&oe=5F17CE05" />
-                                <!-- <h4 class="text-center mt-3" style="text-decoration: underline;color:white;font-weight: normal;">About me</h4>
-                <h6 class="text-center mb-5" style="color:white;font-weight: normal;">A passionate software developer who is concentrating on front technologies</h6> -->
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row" style="height: 50vh;display: flex;align-items: center;">
-                    <div id="about" >
-                        <!-- <div class="col-12 " style="position: relative;">
-                            <img src="./assets/background1.jpg"  style="background-size: contain;position: absolute;"/>
-                            <h3 class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">About me</h3>
-                            <h5 class="text-center mb-5" style="color:white;font-weight: normal;"> My working experience
-                                covers a wide variety of project scopes including product design, mobile apps, theme
-                                development and woocommerce. I spent my very first years of life learning visual
-                                language. It is a long established fact that a reader will be distracted, when looking
-                                at its layout. Various versions have evolved over the years.</h5>
-
-                        </div> -->
+                <div class="row" style="min-height: 50vh;display: flex;align-items: center;">
+                    <div >
 
                         <div class="jumbotron jumbotron-fluid">
                             <div class="container">
-                              <h1 class="display-4">About me</h1>
+                              <h1 id="About" class="display-4">About me</h1>
                               <p class="lead">My working experience
                                 covers a wide variety of project scopes including product design, mobile apps, theme
                                 development and woocommerce. I spent my very first years of life learning visual
@@ -117,34 +93,32 @@
                           </div>
                     </div>
                 </div>
-                <div class="row" style="min-height: 70vh;">
-                    <div id="about" class="container" style="width: 90%;">
+                <div  class="row" style="min-height: 60vh;">
+                    <div class="container" style="width: 90%;">
                         <div class="col-12 ">
-                            <h3 class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">Skils</h3>
+                            <h3 id="Skills" class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">Skills</h3>
                             <!-- <h5 class="text-left mb-5" style="color:white;font-weight: normal;"> My working experience covers a wide variety of project scopes including product design, mobile apps, theme development and woocommerce. I spent my very first years of life learning visual language. It is a long established fact that a reader will be distracted, when looking at its layout. Various versions have evolved over the years.</h5> -->
-                            <div class="row">
+                            <div class="row wrap">
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/nolan/64/html.png" height="96px" width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/nolan/64/html.png" class="imgIconsWeb imgIconsMob"/>
+                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
                                         HTML
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/office/96/000000/css-filetype.png" height="96px"
-                                        width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/office/96/000000/css-filetype.png" class="imgIconsWeb imgIconsMob" />
+                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
                                         CSS
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/dusk/96/000000/javascript.png" height="96px"
-                                        width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/dusk/96/000000/javascript.png" class="imgIconsWeb imgIconsMob" />
+                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
                                         JavaScript
                                     </h5>
                                 </div>
@@ -152,61 +126,54 @@
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/nolan/96/react-native.png" height="96px"
-                                        width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/nolan/96/react-native.png" class="imgIconsWeb imgIconsMob" />
+                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
                                         React Native
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/plasticine/100/000000/react.png" height="96px"
-                                        width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/plasticine/100/000000/react.png" class="imgIconsWeb imgIconsMob"/>
+                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
                                         React JS
                                     </h5>
                                 </div>
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/color/96/000000/angularjs.png" height="96px"
-                                        width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/color/96/000000/angularjs.png" class="imgIconsWeb imgIconsMob" />
+                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
                                         Angular 2+
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/color/96/000000/vue-js.png" height="96px"
-                                        width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/color/96/000000/vue-js.png" class="imgIconsWeb imgIconsMob"/>
+                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
                                         Vue
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/color/96/000000/flutter.png" height="96px"
-                                        width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/color/96/000000/flutter.png" class="imgIconsWeb imgIconsMob" />
+                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
                                         Flutter
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/dusk/96/000000/java-coffee-cup-logo.png"
-                                        height="96px" width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/dusk/96/000000/java-coffee-cup-logo.png" class="imgIconsWeb imgIconsMob" />
+                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
                                         Java
                                     </h5>
                                 </div>
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/color/96/000000/nodejs.png" height="96px"
-                                        width="96px" />
-                                    <h5 class="text-center mb-5" style="color:white;font-weight: normal;">
+                                    <img src="https://img.icons8.com/color/96/000000/nodejs.png" class="imgIconsWeb imgIconsMob"/>
+                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
                                         NodeJS
                                     </h5>
                                 </div>
@@ -218,9 +185,9 @@
                 </div>
 
                 <div class="row" style="background-color: #4d2c3b;height: 70vh;">
-                    <div id="about" class="container" style="width: 90%;">
+                    <div class="container" style="width: 90%;">
                         <div class="col-12 ">
-                            <h3 class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">Projects</h3>
+                            <h3 id="Projects" class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">Projects</h3>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="card" style="width: 18rem;">
@@ -229,7 +196,7 @@
                                           <h6 class="card-subtitle mb-2 text-muted">Language: Java <img src="https://img.icons8.com/dusk/96/000000/java-coffee-cup-logo.png"
                                             height="20px" width="20px" /> </h6>
                                           <p class="card-text">Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.</p>
-                                          <button class="btn btn-dark form-control" style="color: aliceblue;">More details</button>
+                                          <button onclick="window.open('./framework.html')" class="btn btn-dark form-control" style="color: aliceblue;">More details</button>
                                         </div>
                                       </div>
                                 </div>
@@ -261,12 +228,135 @@
         background-size: cover;
         background-attachment: fixed;
     }
+
+    .sidebar {
+        height: 100vh;position: fixed;top:0;width:25%;background:grey;display: flex;flex-direction: column;align-items: center;justify-content: center;
+    }
+
+    /* .hideOnMob {
+            display: none;
+        } */
+
+    @media only screen and (min-width: 0px) and (max-width: 600px) {
+        [class*="col-"] {
+            width: 100% !important;
+        }
+
+        .hideOnMob {
+            display: none !important;
+        }
+
+        .showOnMob {
+            display: flex ;
+        }
+
+        .imgIconsWeb {
+            width: 50%;
+            height: 30%;
+        }
+        .imgIconHeadWeb {
+            color:white;
+            font-weight: normal;
+            font-size: 10px;
+            text-align: center;
+        }
+
+    }
+
+    @media screen and (min-width: 600px) {
+        
+        .hideOnMob {
+            display: flex !important;
+        }
+
+        .showOnMob {
+            display: none !important;
+        }
+        .imgIconsMob {
+            width: 70%;
+            height: 70;
+        }
+        .imgIconHeadMob {
+            color:white;
+            font-weight: normal;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    .active {
+        color: blue;
+    }
 </style>
 
 <script>
+    var about = document.getElementById('About')
+    var home = document.getElementById('Home')
+    var skills = document.getElementById('Skills')
+    var projects = document.getElementById('Projects')
+
+    var aboutLink = document.getElementById('aboutLink');
+    var homeLink = document.getElementById('homeLink')
+    var skillsLink = document.getElementById('skillsLink')
+    var proLink = document.getElementById('proLink')
+
+    var currentActiveElement;
+
     function isHidden(el) {
         return (el.offsetParent === null)
     }
+
+    getCurrentActiveClass = () => {
+        setActiveLink(about, aboutLink);
+        setActiveLink(home, homeLink);
+        setActiveLink(skills, skillsLink);
+        setActiveLink(projects, proLink);
+        checkOnlyOne();
+    }
+
+    setActiveLink = (el, linkEl) => {
+        if(elementInViewport(el)) {
+            linkEl.className  = 'active'; 
+            currentActiveElement = el;
+        } else {
+            linkEl.className  = ''; 
+        }
+    }
+
+    checkOnlyOne = () => {
+        if(skillsLink.className === 'active') {
+            aboutLink.className = '';
+        }
+        if(aboutLink.className ==='active') {
+            homeLink.className = ''
+        }
+        if(currentActiveElement===skills) {
+            skillsLink.className = 'active';
+        }
+        if(currentActiveElement===projects) {
+            proLink.className = 'active';
+        }
+    }
+
+    function elementInViewport(el) {
+        var top = el.offsetTop;
+        var left = el.offsetLeft;
+        var width = el.offsetWidth;
+        var height = el.offsetHeight;
+
+        while(el.offsetParent) {
+            el = el.offsetParent;
+            top += el.offsetTop;
+            left += el.offsetLeft;
+        }
+
+        return (
+            top >= window.pageYOffset &&
+            left >= window.pageXOffset &&
+            (top + height) <= (window.pageYOffset + window.innerHeight) &&
+            (left + width) <= (window.pageXOffset + window.innerWidth)
+        );
+}
 </script>
 
 </html>
