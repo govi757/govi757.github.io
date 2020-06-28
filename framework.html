@@ -42,7 +42,7 @@
 
                                 <div class="col-4 mt-5">
                                     <button
-                                        onclick="window.open('https://drive.google.com/u/0/uc?id=1Lk1hVhSnrvVKrclfZM6vVtKy_yjnhtli&export=download')"
+                                        onclick="window.open('https://drive.google.com/u/0/uc?id=1yDSALsZ1EbuEvdvKcXnMK2cofwhiaTVT&export=download')"
                                         class="btn btn-primary">Download</button>
                                 </div>
                             </div>
@@ -143,20 +143,18 @@
                 </div>
 
                 <div class="col-9 mt-5" style="background-color: grey;">
-                    api SignupApi {
+                    api: SignupApi {
                     <br>
                     type post<br>
                     path 'signup'<br>
-                    <br>
                     input emailId,name,phone,password<br>
                     output signupResponse<br>
                     }
                     <br><br>
-                    api SigninApi {
+                    api: SigninApi {
                         <br>
                         type post<br>
                         path 'signin'<br>
-                        <br>
                         input emailId,password<br>
                         output signinResponse<br>
                         }
