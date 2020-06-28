@@ -1,9 +1,337 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
 
-    </head>
-    <body>
-        <h1>Fraework landing page</h1>
-    </body>
+<head>
+    <title>Govind portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<body onscroll="getCurrentActiveClass()" style="background-color: #1e1e24;">
+    <noscript>
+        <strong>We're sorry but ok doesn't work properly without JavaScript enabled. Please enable it to
+            continue.</strong>
+    </noscript>
+    <div class="col">
+        <div class="row">
+            <div class="sidebar hideOnMob">
+                <a href="#" id="homeLink">Home</a>
+                <a href="#" id="skillsLink">Skills</a>
+                <a href="#" id="proLink">Projects</a>
+            </div>
+            <div class="col-md-2 hideOnMob"></div>
+            <div class="col">
+                <div id="Home" class="container  my-5" style="min-height: 30vh;">
+                    <div class="row justify-content-around" style="margin-top: 14%;">
+                        <div class="col align-item-center d-flex justify-content-center showOnMob">
+                            <div style="border-radius: 100%;width: 100%;display: flex;justify-content: center;">
+                                <img style="border-radius: 100%;height: 80%;width: 80%;"
+                                    src="https://scontent.fccj2-1.fna.fbcdn.net/v/t1.0-9/65420725_2144511245675391_3254280725720989696_n.jpg?_nc_cat=109&_nc_sid=85a577&_nc_ohc=_CIVgIewscIAX8Bs7PU&_nc_ht=scontent.fccj2-1.fna&oh=39c812a2e57f9248382c2a558d8fba25&oe=5F17CE05" />
+                            </div>
+                        </div>
+                        <div class=" d-flex justify-content-center column flex-column mx-5">
+                            <div class="col-9">
+                                <h2 class="text-left" style="color:white;font-weight: normal;">VV FrameWork</h2>
+                                <h6 class="text-left" style="color:white;font-weight: normal;">Framework for React Which
+                                    will simplify creating the folderstructure and file creation along with handling
+                                    with redux features and api calls</h6>
+
+                                <div class="col-4 mt-5">
+                                    <button
+                                        onclick="window.open('https://drive.google.com/u/0/uc?id=1Lk1hVhSnrvVKrclfZM6vVtKy_yjnhtli&export=download')"
+                                        class="btn btn-primary">Download</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="min-height: 50vh;width: 100% !important;">
+                    <div style="width:100%">
+
+                        <div class="jumbotron jumbotron-fluid">
+                            <div class="container">
+                                <div style="width:100%">
+                                    <div class="col">
+                                        <h3 id="About">How to install</h3>
+                                    </div>
+                                    <ul>
+                                        <li>Extract the zip file downloaded from the above download button</li>
+                                        <li>Go to the Extracted folder in terminal</li>
+                                        <li> Type ./install-vv </li>
+                                        <li> You have Successfully installed the frame work </li>
+                                    </ul>
+                                </div>
+
+                                <div style="width:100%">
+                                    <div class="col">
+                                        <h3 >How to use</h3>
+                                    </div>
+                                    <ul>
+                                        <li>Create a new folder with the project name</li>
+                                        <li>Open the new folder in terminal.</li>
+                                        <li> Type vv-new </li>
+                                        <li> You have Successfully Created your VV Project </li>
+                                        <li> Now you can edit the vvBase.vv file for components and vvApis.vv for api and redux. </li>
+                                        <li> Type ./vv-run for generating the react files. Enjoy coding </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div style="width:100%;color:white" class="row">
+                    <div class="col-6">
+                    <div class="col">
+                        <h3 >Tutorial </h3>
+                        <hr style="background-color: white;">
+                    </div>
+                    <ul>
+                        <li>Create a new folder with FirstVV  == > mkdir FirstVV</li>
+                        <li>Open the new folder in terminal. ==> cd FirstVV</li>
+                        <li> Type vv-new </li>
+                        <li> You have Successfully Created your VV Project </li>    
+                    </ul>
+                    <br><br>
+                    <div class="col mx-3">
+                        <h4 >vvBase.vv </h4>
+                        <hr style="background-color: white;">
+                    </div>
+                    <ul>
+                        <li>The first line of a vvBase.vv file should be Project ProjectName</li>
+                        <li>For Creating containers the syntax will be <br> <span class="code">"View ScreenName under 'path'"</span></li>
+                        <li>For Creating components the syntax will be<br><span class="code"> "Component ComponentName under 'path'"</span></li>
+                        <li>For Creating Routes the syntax will be<br> <span class="code">"Route 'routepath' for ScreenName"</span></li>
+                    </ul>
+                    <br><br>
+                    <div class="col mx-3">
+                        <h4 >vvApis.vv </h4>
+                        <hr style="background-color: white;">
+                    </div>
+                    <ul>
+                        <!-- <li>the api will start form api key word</li> -->
+                        <li>the api will start form api key word <br> <span class="code">"api APIName {"</span></li>
+                        <li>The we need to specify the type of request(get/post)<br><span class="code"> "type post"</span></li>
+                        <li>Then we will specify the path which is url of the api<br> <span class="code">path 'path'</span></li>
+                        <li>Then we will specify the inputs for that api<br> <span class="code">input input1,input2</span></li>
+                        <li>Then we will specify the output for that api<br> <span class="code">output response</span></li>
+                        <br><br>
+                        <li>After editing this and do a ./vv-run All the files and code for redux and axios will be created.</li>
+                        <li>Only thing you need to do is dispatch the api from vvApis.js file and get the response from VVReducer.js file.</li>
+                        <li>Happy Coding!!!!!!</li>
+                    </ul>
+                </div>
+
+                <div class="col-6">
+                    <h3 >Example </h3>
+                    <hr style="background-color: white;">
+                    <div class="col-9" style="background-color: grey;">
+                    Project FirstVV
+                    <br>
+                    View Login,Signup under 'auth'<br>
+                    Component BasicTextField under 'basic'<br>
+                    <br><br>
+                    Route 'auth/login' for Login<br>
+                    Route 'auth/signup' for Signup<br>
+                    <br><br>
+                </div>
+
+                <div class="col-9 mt-5" style="background-color: grey;">
+                    api SignupApi {
+                    <br>
+                    type post<br>
+                    path 'signup'<br>
+                    <br>
+                    input emailId,name,phone,password<br>
+                    output signupResponse<br>
+                    }
+                    <br><br>
+                    api SigninApi {
+                        <br>
+                        type post<br>
+                        path 'signin'<br>
+                        <br>
+                        input emailId,password<br>
+                        output signinResponse<br>
+                        }
+                </div>
+            </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- built files will be auto injected -->
+</body>
+<style>
+    .navbar-item {
+        margin-right: 30px;
+        padding-top: 10px;
+    }
+
+    a {
+        color: white;
+    }
+
+    h5 {
+        letter-spacing: 3px;
+    }
+
+    .jumbotron {
+        background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73));
+        background-size: cover;
+        background-attachment: fixed;
+        width: 100%;
+    }
+
+    .sidebar {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        width: 16.5%;
+        background: grey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* .hideOnMob {
+            display: none;
+        } */
+
+    @media only screen and (min-width: 0px) and (max-width: 600px) {
+        [class*="col-"] {
+            width: 100% !important;
+        }
+
+        .hideOnMob {
+            display: none !important;
+        }
+
+        .showOnMob {
+            display: flex;
+        }
+
+        .imgIconsWeb {
+            width: 50%;
+            height: 30%;
+        }
+
+        .imgIconHeadWeb {
+            color: white;
+            font-weight: normal;
+            font-size: 10px;
+            text-align: center;
+        }
+
+    }
+
+    @media screen and (min-width: 600px) {
+
+        .hideOnMob {
+            display: flex !important;
+        }
+
+        .showOnMob {
+            display: none !important;
+        }
+
+        .imgIconsMob {
+            width: 70%;
+            height: 70;
+        }
+
+        .imgIconHeadMob {
+            color: white;
+            font-weight: normal;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    .active {
+        color: blue;
+    }
+    .code {
+        background-color: grey;
+    }
+</style>
+
+<script>
+    var about = document.getElementById('About')
+    var home = document.getElementById('Home')
+    var skills = document.getElementById('Skills')
+    var projects = document.getElementById('Projects')
+
+    var aboutLink = document.getElementById('aboutLink');
+    var homeLink = document.getElementById('homeLink')
+    var skillsLink = document.getElementById('skillsLink')
+    var proLink = document.getElementById('proLink')
+
+    var currentActiveElement;
+
+    function isHidden(el) {
+        return (el.offsetParent === null)
+    }
+
+    getCurrentActiveClass = () => {
+        setActiveLink(about, aboutLink);
+        setActiveLink(home, homeLink);
+        setActiveLink(skills, skillsLink);
+        setActiveLink(projects, proLink);
+        checkOnlyOne();
+    }
+
+    setActiveLink = (el, linkEl) => {
+        if (elementInViewport(el)) {
+            linkEl.className = 'active';
+            currentActiveElement = el;
+        } else {
+            linkEl.className = '';
+        }
+    }
+
+    checkOnlyOne = () => {
+        if (skillsLink.className === 'active') {
+            aboutLink.className = '';
+        }
+        if (aboutLink.className === 'active') {
+            homeLink.className = ''
+        }
+        if (currentActiveElement === skills) {
+            skillsLink.className = 'active';
+        }
+        if (currentActiveElement === projects) {
+            proLink.className = 'active';
+        }
+    }
+
+    function elementInViewport(el) {
+        var top = el.offsetTop;
+        var left = el.offsetLeft;
+        var width = el.offsetWidth;
+        var height = el.offsetHeight;
+
+        while (el.offsetParent) {
+            el = el.offsetParent;
+            top += el.offsetTop;
+            left += el.offsetLeft;
+        }
+
+        return (
+            top >= window.pageYOffset &&
+            left >= window.pageXOffset &&
+            (top + height) <= (window.pageYOffset + window.innerHeight) &&
+            (left + width) <= (window.pageXOffset + window.innerWidth)
+        );
+    }
+</script>
+
 </html>
