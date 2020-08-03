@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="./constant.js" lang="js"></script>
 
 </head>
 
@@ -36,7 +37,7 @@
                     <div class="row justify-content-around" style="margin-top: 14%;">
                         <div class="col align-item-center d-flex justify-content-center showOnMob">
                             <div style="border-radius: 100%;width: 100%;display: flex;justify-content: center;">
-                                <img style="border-radius: 100%;height: 80%;width: 80%;"
+                                <img style="border-radius: 100%;height: 90%;width: 80%;"
                                     src="./assets/dp.jpeg" />
                             </div>
                         </div>
@@ -71,8 +72,8 @@
 
                         </div>
                         <div class="col-sm-4 align-item-center d-flex justify-content-center hideOnMob">
-                            <div style="border-radius: 100%;height: 70%;width: 100%;">
-                                <img style="border-radius: 100%;height: 100%;width: 100%;"
+                            <div style="border-radius: 10%;height: 90%;width: 100%;border: 8px solid #4d2c3b;">
+                                <img style="border-radius: 10%;height: 100%;width: 100%;"
                                     src="./assets/dp.jpeg" />
                             </div>
                         </div>
@@ -184,12 +185,12 @@
                     </div>
                 </div>
 
-                <div class="row" style="background-color: #4d2c3b;height: 70vh;">
+                <div class="row" style="background-color: #4d2c3b;min-height: 70vh;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
                             <h3 id="Projects" class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">Projects</h3>
-                            <div class="row">
-                                <div class="col-md-4">
+                            <div class="row" id="projectList">
+                                <!-- <div class="col-md-4">
                                     <div class="card" >
                                         <div class="card-body">
                                           <h5 class="card-title">VV FrameWork</h5>
@@ -199,7 +200,7 @@
                                           <button onclick="window.open('./framework.html')" class="btn btn-dark form-control" style="color: aliceblue;">More details</button>
                                         </div>
                                       </div>
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
@@ -300,7 +301,24 @@
     var skillsLink = document.getElementById('skillsLink')
     var proLink = document.getElementById('proLink')
 
+    var projectList = [{
+        name:'VVFrameWork',
+        description:'Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.',
+        languages:[languagesConstants.java]
+    },
+    {
+        name:'ABC LMS',
+        description:'Its a learning management system designed for ABC for tech training which is helppfull for the students for accessing the online training of ABC',
+        languages:[languagesConstants.vue,languagesConstants.html]
+    }]
+
+    window.onload = () => {
+        addProjectCards();
+    }
+
     var currentActiveElement;
+
+
 
     function isHidden(el) {
         return (el.offsetParent === null)
@@ -336,6 +354,30 @@
         if(currentActiveElement===projects) {
             proLink.className = 'active';
         }
+    }
+
+    addProjectCards = () => {
+        projectList.forEach(item => {
+            var languages = '<h6 class="card-subtitle mb-2 text-muted">Language:';
+            item.languages.forEach(item => {
+                languages = languages + item.name + `<img src="${item.url}"
+                                height="20px" width="20px" />`
+            })
+            languages = languages + '</h2>'
+            var card = `<div class="col-md-4 my-1" style="min-height:100%">
+                                <div class="card" style="min-height:100%">
+                                <div class="card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                                ${languages}
+                                <p class="card-text" style="height:100px;overflow:hidden">${item.description}</p>
+                                <button onclick="window.open('./framework.html')" class="btn btn-dark form-control" style="color: aliceblue;">More details</button>
+                                </div>
+                            </div>
+                        </div>`
+        const ele = document.createElement('div');
+        ele.innerHTML = card;
+        document.getElementById('projectList').appendChild(ele.firstChild);
+        });                              
     }
 
     function elementInViewport(el) {
