@@ -72,7 +72,7 @@ h5 {
 }
 
 .active {
-    color: blue;
+    color: blue !important;
 }
 /* The Modal (background) */
 .modal {
