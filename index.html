@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./index.css"/>
     <script src="./constant.js" lang="js"></script>
 
 </head>
@@ -85,11 +86,7 @@
                         <div class="jumbotron jumbotron-fluid">
                             <div class="container">
                               <h1 id="About" class="display-4">About me</h1>
-                              <p class="lead">My working experience
-                                covers a wide variety of project scopes including product design, mobile apps, theme
-                                development and woocommerce. I spent my very first years of life learning visual
-                                language. It is a long established fact that a reader will be distracted, when looking
-                                at its layout. Various versions have evolved over the years.</p>
+                              <p class="lead">To obtain a responsible, challenging, and awarding position in a software development organization with an established record of accomplishment where my skills, abilities and technical abilities can be utilized.</p>
                             </div>
                           </div>
                     </div>
@@ -190,104 +187,28 @@
                         <div class="col-12 ">
                             <h3 id="Projects" class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">Projects</h3>
                             <div class="row" id="projectList">
-                                <!-- <div class="col-md-4">
-                                    <div class="card" >
-                                        <div class="card-body">
-                                          <h5 class="card-title">VV FrameWork</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Language: Java <img src="https://img.icons8.com/dusk/96/000000/java-coffee-cup-logo.png"
-                                            height="20px" width="20px" /> </h6>
-                                          <p class="card-text">Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.</p>
-                                          <button onclick="window.open('./framework.html')" class="btn btn-dark form-control" style="color: aliceblue;">More details</button>
-                                        </div>
-                                      </div>
-                                </div> -->
+
                             </div>
 
                         </div>
                     </div>
                 </div>
+                <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div id="modalBody" class="modal-content">
+    </div>
+  
+  </div>
+  
             </div>
         </div>
     </div>
     <!-- built files will be auto injected -->
 </body>
 <style>
-    .navbar-item {
-        margin-right: 30px;
-        padding-top: 10px;
-    }
-
-    a {
-        color: white;
-    }
-
-    h5 {
-        letter-spacing: 3px;
-    }
-    .jumbotron {
-        background-image:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url("./assets/background1.jpg");
-        background-size: cover;
-        background-attachment: fixed;
-    }
-
-    .sidebar {
-        height: 100vh;position: fixed;top:0;width:25%;background:grey;display: flex;flex-direction: column;align-items: center;justify-content: center;
-    }
-
-    /* .hideOnMob {
-            display: none;
-        } */
-
-    @media only screen and (min-width: 0px) and (max-width: 600px) {
-        [class*="col-"] {
-            width: 100% !important;
-        }
-
-        .hideOnMob {
-            display: none !important;
-        }
-
-        .showOnMob {
-            display: flex ;
-        }
-
-        .imgIconsWeb {
-            width: 50%;
-            height: 30%;
-        }
-        .imgIconHeadWeb {
-            color:white;
-            font-weight: normal;
-            font-size: 10px;
-            text-align: center;
-        }
-
-    }
-
-    @media screen and (min-width: 600px) {
-        
-        .hideOnMob {
-            display: flex !important;
-        }
-
-        .showOnMob {
-            display: none !important;
-        }
-        .imgIconsMob {
-            width: 70%;
-            height: 70;
-        }
-        .imgIconHeadMob {
-            color:white;
-            font-weight: normal;
-            font-size: 18px;
-            text-align: center;
-        }
-    }
-
-    .active {
-        color: blue;
-    }
+   
 </style>
 
 <script>
@@ -295,22 +216,174 @@
     var home = document.getElementById('Home')
     var skills = document.getElementById('Skills')
     var projects = document.getElementById('Projects')
+    var currentIndex = 0;
 
     var aboutLink = document.getElementById('aboutLink');
     var homeLink = document.getElementById('homeLink')
     var skillsLink = document.getElementById('skillsLink')
     var proLink = document.getElementById('proLink')
 
-    var projectList = [{
+    var projectList = [
+    {
+        name:'Xcelerator App',
+        description:`Xcelerator app(Exn app) is a hybrid mobile application developed using react native.Its a learning application as well as job seeking application which allows user to build a portfolio of skills aligned to their career aspirations .`,
+        descriptionHtml:`
+        Xcelerator app(Exn app) is a hybrid mobile application developed using react native.Its a learning application as well as job seeking application which allows user to build a portfolio of skills aligned to their career aspirations .
+        <ul>
+        <li>Custom component architecture. </li>
+        <li>We have made the whole project into screens, module components and element components.</li>
+        <li>Redux architecture for state management.</li>
+        <li>We have used redux thunk which will give more flexibility.</li>
+        <li>We have used axios for server side interactions.</li>
+        </ul>
+        `,
+        languages:[languagesConstants.java]
+    },    
+    {
         name:'VVFrameWork',
-        description:'Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.',
+        description:`Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.`,
+        descriptionHtml:`
+        Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.
+        <ul>
+        <li>Creation of Screens and components will happen from a single place.</li>
+        <li>Writing apis and its redux flow becomes simplified.</li>
+        <li>All the apis can be listed in one file with more readable format.</li>
+        </ul>
+        `,
         languages:[languagesConstants.java]
     },
     {
         name:'ABC LMS',
-        description:'Its a learning management system designed for ABC for tech training which is helppfull for the students for accessing the online training of ABC',
-        languages:[languagesConstants.vue,languagesConstants.html]
-    }]
+        description:'LMS is a learning management system thats developed for ABCForTechnology. This is useful for users who are searching for online courses on various technologies including java, python etc which will contains videos,tasks etc.',
+        languages:[languagesConstants.vue,languagesConstants.html, languagesConstants.css],
+        descriptionHtml:`
+        LMS is a learning management system thats developed for ABCForTechnology. This is useful for users who are searching for online courses on various technologies including java, python etc which will contains videos,tasks etc.
+        <ul>
+        <li>Custom component architecture .</li>
+        <li>We have made the whole project into screens and module components which includes video task, audio task, question task coding task etc.</li>
+        <li>We are using vuetify for beautification and responsiveness.</li>
+        <li>Have included a code editor for coding task where we have used code mirror package. The code editor we have developed for this application will support java, python and c.</li>
+        </ul>
+        `,
+    },
+    {
+        name:'ABC ATOMS',
+        description:'ATOMS is a training operation management system thats developed for ABCForTechnology. This is useful for managing their offline training processes .',
+        languages:[languagesConstants.vue,languagesConstants.html, languagesConstants.css],
+        descriptionHtml:`
+        ATOMS is a training operation management system thats developed for ABCForTechnology. This is useful for managing their offline training processes .
+        <ul>
+        <li>Custom component architecture .</li>
+        <li>We have made the whole project into screens, module components which will be useful for styling .</li>
+        <li>We are using vuetify for beautification and responsiveness .</li>
+        <li>We are using both tabular view and big calendar view for displaying lists of sessions for a trainer.</li>
+        </ul>
+        `,
+    },
+
+
+    {
+        name:'ATOMS App',
+        description:' ATOMS App is used to manage students activity for a trainer which includes a qrcode scanner for marking the attendance of students .',
+        languages:[languagesConstants.flutter],
+        descriptionHtml:`
+        ATOMS App is used to manage students activity for a trainer which includes a qrcode scanner for marking the attendance of students .
+        <ul>
+        <li>Custom component architecture .</li>
+        <li>We have made the whole project into screens, module components and element components which includes text, buttons etc</li>
+        <li>We are using scoped model for state management.</li>
+        <li>We are using qr_flutter package for reading the qrcode.</li>
+        <li>After scanning the qrcode in every 5 minutes api will be called inorder to upload the attendance to the server .</li>
+        </ul>
+        `,
+    },
+
+    {
+        name:'Online Design Tool',
+        description:' Its a Design tool which is use full for the developers and designers to design a website and get the code for that.',
+        languages:[languagesConstants.react,languagesConstants.nodejs],
+        descriptionHtml:`
+        Its a Design tool which is use full for the developers and designers to design a website and get the code for that.
+        <ul>
+        <li>We can create design just by drag and drop</li>
+        <li>After creation we will be able to see the styles of that particular component.</li>
+        </ul>
+        `,
+    },
+    
+    {
+        name:'Storybook App',
+        description:' Its a reactnative app which will allows you to read and write stories,poems etc.Its a  good platform to display your writing skills.',
+        languages:[languagesConstants.reactnative,languagesConstants.nodejs],
+        descriptionHtml:`
+        Its a reactnative app which will allows you to read and write stories,poems etc.Its a  good platform to display your writing skills.
+        <ul>
+        <li>Easy to write and edit the contents using  powerful rich text editor quilljs.</li>
+        <li>Easy to share your works as pdf</li>
+        <li>You can read the works of others and share them</li>
+        </ul>
+        `,
+    },
+    {
+        name:'Ampliz Extension',
+        description:' Ampliz extension can be used to get the information of the websites which includes their revenues, employees etc. If we took one website and open the ampliz extension we will get the informations about that website.',
+        languages:[languagesConstants.angular,languagesConstants.html,languagesConstants.css],
+        descriptionHtml:`
+        Ampliz extension can be used to get the information of the websites which includes their revenues, employees etc. If we took one website and open the ampliz extension we will get the informations about that website.
+        <ul>
+        <li>Custom component architecture .</li>
+        <li>We are using bootstrap for styling and responsiveness.</li>
+        <li>We have made the whole project into screens, module components .</li>
+        </ul>
+        `,
+    },
+    {
+        name:'VITA Web',
+        description:' VITA is a Virtual interactive training and assessment platform where we can create trainings via phone calls based on IVR. We are using the apis provided by variform solutions for creating trainings based on IVR . This product mainly concentrates on employees who doesn’t have smartphones so that they can attend the training using interactive voice response .',
+        languages:[languagesConstants.angular],
+        descriptionHtml:`
+        VITA is a Virtual interactive training and assessment platform where we can create trainings via phone calls based on IVR. We are using the apis provided by variform solutions for creating trainings based on IVR . This product mainly concentrates on employees who doesn’t have smartphones so that they can attend the training using interactive voice response .
+        <ul>
+        <li>Custom component architecture .</li>
+        <li>We are treating most of the screens as components which makes styling easier.</li>
+        <li>We are using bootstrap for styling.</li>
+        <li>We are using IVR(Interactive voice response) based solution apis provided by variform.</li>
+        </ul>
+        `,
+    },
+
+    {
+        name:'Mobe App',
+        description:' VITA is a Virtual interactive training and assessment platform where we can create trainings via phone calls based on IVR. We are using the apis provided by variform solutions for creating trainings based on IVR . This product mainly concentrates on employees who doesn’t have smartphones so that they can attend the training using interactive voice response .',
+        languages:[languagesConstants.reactnative],
+        descriptionHtml:`
+        VITA is a Virtual interactive training and assessment platform where we can create trainings via phone calls based on IVR. We are using the apis provided by variform solutions for creating trainings based on IVR . This product mainly concentrates on employees who doesn’t have smartphones so that they can attend the training using interactive voice response .
+        <ul>
+        <li>Custom component architecture .</li>
+        <li>We are treating every small pieces as components which makes styling easier.</li>
+        <li>We are using redux for state management.</li>
+        <li>We have used axios for server side interactions.</li>
+        </ul>
+        `,
+    },
+
+    {
+        name:'Staffroom App',
+        description:' Staffroom app is a hybrid mobile app developed for managing the students in a class which can be used by professors.We can mark the attendance , internal marks of the students etc using this. We will get the whole details in excel format. Its easy to find the students who has less attendance and internal marks using this and there by student management becomes easier.',
+        languages:[languagesConstants.flutter],
+        descriptionHtml:`
+        Staffroom app is a hybrid mobile app developed for managing the students in a class which can be used by professors.We can mark the attendance , internal marks of the students etc using this. We will get the whole details in excel format. Its easy to find the students who has less attendance and internal marks using this and there by student management becomes easier.
+        <ul>
+        <li>Custom component architecture .</li>
+        <li>Every small pieces of this app is created as components which includes text, buttons etc.</li>
+        <li>We are using scoped model for state management.</li>
+        <li>We are using shared preferences for storing the details in the phone itself. </li>
+        </ul>
+        `,
+    },
+    // VITA Web
+
+    ]
 
     window.onload = () => {
         addProjectCards();
@@ -357,20 +430,20 @@
     }
 
     addProjectCards = () => {
-        projectList.forEach(item => {
-            var languages = '<h6 class="card-subtitle mb-2 text-muted">Language:';
-            item.languages.forEach(item => {
-                languages = languages + item.name + `<img src="${item.url}"
-                                height="20px" width="20px" />`
+        projectList.forEach((item, index) => {
+            var languages = '<h6 style="height:30px" class="card-subtitle mb-2 text-muted">Language:';
+            item.languages.forEach((lang, langIndex) => {
+                languages = languages + lang.name + `<img src="${lang.url}"
+                                height="20px" width="20px" />`+ ((langIndex<item.languages.length-1)?', ':'')
             })
-            languages = languages + '</h2>'
+            languages = languages + '</h6>'
             var card = `<div class="col-md-4 my-1" style="min-height:100%">
                                 <div class="card" style="min-height:100%">
                                 <div class="card-body">
                                 <h5 class="card-title">${item.name}</h5>
                                 ${languages}
                                 <p class="card-text" style="height:100px;overflow:hidden">${item.description}</p>
-                                <button onclick="window.open('./framework.html')" class="btn btn-dark form-control" style="color: aliceblue;">More details</button>
+                                <button onclick=\"openDetails(${index})\" class="btn btn-dark form-control" style="color: aliceblue;">More details</button>
                                 </div>
                             </div>
                         </div>`
@@ -378,6 +451,46 @@
         ele.innerHTML = card;
         document.getElementById('projectList').appendChild(ele.firstChild);
         });                              
+    }
+
+    function openDetails(index) {
+        console.log(index);
+        currentIndex = index;
+        var modal = document.getElementById("myModal");
+        var modalBody = document.getElementById("modalBody");
+        modalBody.innerHTML = '';
+        var languages = '<h6 class="card-subtitle mb-2 text-muted">Language:';
+        projectList[index].languages.forEach((lang, langIndex) => {
+                languages = languages + lang.name + `<img src="${lang.url}"
+                                height="20px" width="20px" />`+ ((langIndex<projectList[index].languages.length-1)?', ':'')
+            });
+        languages = languages + '</h6>'
+
+        var descriptionHtml = `
+        <div>
+            <span class="close" onclick="closeDetails()">&times;</span>
+          <h1>${projectList[index].name}</h1>
+          ${languages}
+          <div>${projectList[index].descriptionHtml}</div>
+      </div>
+      `;
+      var ele = document.createElement('div');
+      ele.innerHTML = descriptionHtml;
+      console.log(ele);
+      modalBody.appendChild(ele);
+        modal.style.display = "block";
+        setTimeout(() => {
+            modalBody.style.top = "20%";
+        }, 10);
+    }
+
+    function closeDetails() {
+        var modal = document.getElementById("myModal");
+        var modalBody = document.getElementById("modalBody");
+        modalBody.style.top = "20px";
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 400);
     }
 
     function elementInViewport(el) {
