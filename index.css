@@ -17,7 +17,16 @@ h5 {
 }
 
 .sidebar {
-    height: 100vh;position: fixed;top:0;width:25%;background:grey;display: flex;flex-direction: column;align-items: center;justify-content: center;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    width:25%;
+    background:grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
 }
 
 /* .hideOnMob {
@@ -37,7 +46,7 @@ h5 {
         display: flex ;
     }
 
-    .imgIconsWeb {
+    .imgIcons {
         width: 50%;
         height: 30%;
     }
@@ -46,6 +55,10 @@ h5 {
         font-weight: normal;
         font-size: 10px;
         text-align: center;
+    }
+    #modalBody {
+        top:0px;
+        width: 100% !important;
     }
 
 }
@@ -59,7 +72,7 @@ h5 {
     .showOnMob {
         display: none !important;
     }
-    .imgIconsMob {
+    .imgIcons {
         width: 70%;
         height: 70;
     }
@@ -69,10 +82,14 @@ h5 {
         font-size: 18px;
         text-align: center;
     }
+    #modalBody {
+        top:0px;
+        width: 60% !important;
+    }
 }
 
 .active {
-    color: blue !important;
+    color: #4d2c3b !important;
 }
 /* The Modal (background) */
 .modal {
@@ -99,9 +116,9 @@ transition: top 0.5s;
 .modal-content {
 background-color: #fefefe;
 margin: auto auto; /* 15% from the top and centered */
-padding: 20px;
+padding: 5%;
 border: 1px solid #888;
-width: 60%; /* Could be more or less, depending on screen size */
+width: 100%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -117,4 +134,8 @@ font-weight: bold;
 color: black;
 text-decoration: none;
 cursor: pointer;
+}
+a {
+    cursor: pointer;
+    color: #fefefe !important;
 }

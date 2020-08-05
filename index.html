@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="./index.css"/>
+    <link rel="stylesheet" href="./index.css" />
     <script src="./constant.js" lang="js"></script>
 </head>
 
@@ -19,15 +19,15 @@
     </noscript>
     <div class="col">
         <div class="row">
-            <div
-                class="sidebar hideOnMob">
+            <div class="sidebar hideOnMob">
 
                 <!-- <div class="col-3"> -->
-                <a href="#" id="homeLink">Home</a>
-                <a href="#" id="aboutLink">About</a>
+                <a onclick="goToSection('home')" id="homeLink">Home</a>
+                <a onclick="goToSection('about')" id="aboutLink">About</a>
                 <!-- <a href="#" id="aboutLink">Education</a> -->
-                <a href="#" id="skillsLink">Skills</a>
-                <a href="#" id="proLink">Projects</a>
+                <a onclick="goToSection('skills')" id="skillsLink">Skills</a>
+                <a onclick="goToSection('projects')" id="proLink">Projects</a>
+                <a onclick="goToSection('education')" id="educationLink">Education</a>
                 <!-- </div> -->
 
             </div>
@@ -37,14 +37,13 @@
                     <div class="row justify-content-around" style="margin-top: 14%;">
                         <div class="col align-item-center d-flex justify-content-center showOnMob">
                             <div style="border-radius: 100%;width: 100%;display: flex;justify-content: center;">
-                                <img style="border-radius: 100%;height: 90%;width: 80%;"
-                                    src="./assets/dp.jpeg" />
+                                <img style="border-radius: 100%;height: 90%;width: 80%;" src="./assets/dp.jpeg" />
                             </div>
                         </div>
                         <div class=" d-flex justify-content-center column flex-column mx-5">
                             <h2 class="text-left" style="color:white;font-weight: normal;">Govind VE</h2>
                             <h3 class="text-left" style="color:white;font-weight: normal;">Software Developer</h3>
-                            <h5 class="text-left" style="color:white;font-weight: normal;">Experience: 2.5 years </h5>
+                            <h5 id="experience" class="text-left" style="color:white;font-weight: normal;">Experience: 2.5 years </h5>
                             <div class="row mx-1 my-1 mt-4" style="color:white;">
                                 <i class="material-icons">mail</i>
                                 <span class="text-left mx-2"
@@ -65,57 +64,62 @@
                                     Kerala, India</span>
                             </div>
                             <div class="row mx-1 mt-5" style="color:white;">
-                                <img src="https://img.icons8.com/officel/40/000000/facebook-new.png" class="mx-2" />
-                                <img src="https://img.icons8.com/color/40/000000/linkedin.png" class="mx-2" />
-                                <img src="https://img.icons8.com/fluent/40/000000/instagram-new.png" class="mx-2" />
+                                <img onclick="openUrl('https://www.facebook.com/govind.ve.5?ref=bookmarks')" src="https://img.icons8.com/officel/40/000000/facebook-new.png" class="mx-2" />
+                                <img onclick="openUrl('https://www.linkedin.com/in/govind-v-e-577a39b7/')" src="https://img.icons8.com/color/40/000000/linkedin.png" class="mx-2" />
+                                <img onclick="openUrl('https://www.instagram.com/govind_v_e/?hl=en')" src="https://img.icons8.com/fluent/40/000000/instagram-new.png" class="mx-2" />
                             </div>
 
                         </div>
                         <div class="col-sm-4 align-item-center d-flex justify-content-center hideOnMob">
-                            <div style="border-radius: 10%;height: 90%;width: 100%;border: 8px solid #4d2c3b;">
-                                <img style="border-radius: 10%;height: 100%;width: 100%;"
-                                    src="./assets/dp.jpeg" />
+                            <div style="border-radius: 100%;height: 90%;width: 100%;border: 3px solid #4d2c3b;">
+                                <img style="border-radius: 100%;height: 100%;width: 100%;" src="./assets/dp.jpeg" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row" style="min-height: 50vh;display: flex;align-items: center;">
-                    <div >
+                    <div>
 
                         <div class="jumbotron jumbotron-fluid">
                             <div class="container">
-                              <h1 id="About" class="display-4">About me</h1>
-                              <p class="lead">To obtain a responsible, challenging, and awarding position in a software development organization with an established record of accomplishment where my skills, abilities and technical abilities can be utilized.</p>
+                                <h1 id="About" class="display-4">About me</h1>
+                                <p class="lead">I am a software developer who wish to obtain a responsible, challenging,
+                                    and awarding position in a software development organization with an established
+                                    record of accomplishment where my skills, abilities and technical abilities can be
+                                    utilized.</p>
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
-                <div  class="row" style="min-height: 60vh;">
+                <div class="row" style="min-height: 60vh;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
-                            <h3 id="Skills" class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">Skills</h3>
+                            <h3 id="Skills" class="text-center mb-3" style="color:white;font-weight: normal;">Skills
+                            </h3>
                             <!-- <h5 class="text-left mb-5" style="color:white;font-weight: normal;"> My working experience covers a wide variety of project scopes including product design, mobile apps, theme development and woocommerce. I spent my very first years of life learning visual language. It is a long established fact that a reader will be distracted, when looking at its layout. Various versions have evolved over the years.</h5> -->
-                            <div class="row wrap">
+                            <div class="row wrap mb-5">
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/nolan/64/html.png" class="imgIconsWeb imgIconsMob"/>
-                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/nolan/64/html.png" class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         HTML
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/office/96/000000/css-filetype.png" class="imgIconsWeb imgIconsMob" />
-                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/office/96/000000/css-filetype.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         CSS
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/dusk/96/000000/javascript.png" class="imgIconsWeb imgIconsMob" />
-                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/dusk/96/000000/javascript.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         JavaScript
                                     </h5>
                                 </div>
@@ -123,54 +127,61 @@
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/nolan/96/react-native.png" class="imgIconsWeb imgIconsMob" />
-                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/nolan/96/react-native.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         React Native
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/plasticine/100/000000/react.png" class="imgIconsWeb imgIconsMob"/>
-                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/plasticine/100/000000/react.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         React JS
                                     </h5>
                                 </div>
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/color/96/000000/angularjs.png" class="imgIconsWeb imgIconsMob" />
-                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/color/96/000000/angularjs.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         Angular 2+
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/color/96/000000/vue-js.png" class="imgIconsWeb imgIconsMob"/>
-                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/color/96/000000/vue-js.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         Vue
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/color/96/000000/flutter.png" class="imgIconsWeb imgIconsMob" />
-                                    <h5  class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/color/96/000000/flutter.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         Flutter
                                     </h5>
                                 </div>
 
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/dusk/96/000000/java-coffee-cup-logo.png" class="imgIconsWeb imgIconsMob" />
-                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/dusk/96/000000/java-coffee-cup-logo.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         Java
                                     </h5>
                                 </div>
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/color/96/000000/nodejs.png" class="imgIconsWeb imgIconsMob"/>
-                                    <h5   class="imgIconHeadMob imgIconHeadWeb">
+                                    <img src="https://img.icons8.com/color/96/000000/nodejs.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
                                         NodeJS
                                     </h5>
                                 </div>
@@ -184,7 +195,8 @@
                 <div class="row" style="background-color: #4d2c3b;min-height: 70vh;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
-                            <h3 id="Projects" class="text-center mt-3 mb-3" style="color:white;font-weight: normal;">Projects</h3>
+                            <h3 id="Projects" class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
+                                Projects</h3>
                             <div class="row" id="projectList">
 
                             </div>
@@ -192,25 +204,59 @@
                         </div>
                     </div>
                 </div>
-                <!-- The Modal -->
-<div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div id="modalBody" class="modal-content">
-    </div>
-  
-  </div>
-  
+                <div class="row mb-4" style="min-height: 60vh;">
+                    <div class="container" style="width: 90%;">
+                        <div class="col-12 ">
+                            <h3 id="Education" class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
+                                Education</h3>
+                                <div class="my-4">
+                                    <h4 style="color:aliceblue;">SSLC</h4>
+                                    <hr style="background: white">
+                                    <h6 style="color:aliceblue;">Sylabus: State Sylabus</h6>
+                                    <h6 style="color:aliceblue;">School: HCCEMHSS Snehagiri</h6>
+                                    <h6 style="color:aliceblue;">Marks: 83%</h6>
+                                </div>
+                                <div class="my-4">
+                                    <h4 style="color:aliceblue;">HSE</h4>
+                                    <hr style="background: white">
+                                    <h6 style="color:aliceblue;">Sylabus: State Sylabus</h6>
+                                    <h6 style="color:aliceblue;">School: Gov Samithy HSE School</h6>
+                                    <h6 style="color:aliceblue;">Marks: 77%</h6>
+                                </div>
+                            <div>
+                                <h4 style="color:aliceblue;">Graduation</h4>
+                                <hr style="background: white">
+                                <h6 style="color:aliceblue;">Branch: Btech in computer science and engineering</h6>
+                                <h6 style="color:aliceblue;">University: Kannur University</h6>
+                                <h6 style="color:aliceblue;">College: Sree Narayana guru College of engineering and
+                                    technology Payyannur(2013-2017)</h6>
+                                <h6 style="color:aliceblue;">Marks: 59%</h6>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div id="modalBody" class="modal-content">
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>
     <!-- built files will be auto injected -->
 </body>
 <style>
-   
+
 </style>
 <script src="./index.js" lang="js"></script>
-<script></script>
+<script>
+</script>
 
 
 </html>
