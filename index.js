@@ -278,7 +278,7 @@ addProjectCards = (viewMoreOption=false) => {
     document.getElementById('viewMoreButton').innerHTML = viewMore?'View More':'View Less';
     document.getElementById('projectList').appendChild(ele.firstChild);
     });
-    viewMore==true?goToSection('projects'):null;
+    viewMore==true&&viewMoreOption==true?goToSection('projects'):null;
 }
 
 function openDetails(index) {
