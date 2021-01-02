@@ -3,44 +3,71 @@
 
 <head>
     <title>Govind portfolio</title>
+    <!-- <img src="./assets/goviLogo.png" style="width: 60px;height:30px"/> -->
+    <link rel="icon" href="./assets/logo.png"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./index.css" />
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./constant.js" lang="js"></script>
 </head>
 
-<body onscroll="getCurrentActiveClass()" style="background-color: #1e1e24;">
+<body onscroll="getCurrentActiveClass()" >
     <noscript>
         <strong>We're sorry but ok doesn't work properly without JavaScript enabled. Please enable it to
             continue.</strong>
     </noscript>
-    <div class="col">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed;width: 100%;z-index: 999;">
+        <a onclick="goToSection('home')" class="navbar-brand" id="homeLink">
+        <img src="./assets/logo_transparent.png" style="width: 70px;height:40px"/>
+        <!-- Govind VE -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li onclick="goToSection('about')" class="nav-item active">
+              <a class="nav-link" id="aboutLink">About <span class="sr-only">(current)</span></a>
+            </li>
+            <li  onclick="goToSection('skills')" class="nav-item">
+              <a class="nav-link" id="skillsLink">Skills</a>
+            </li>
+            <li onclick="goToSection('projects')" class="nav-item">
+              <a class="nav-link" id="proLink">Projects</a>
+            </li>
+            <li onclick="goToSection('education')" class="nav-item">
+                <a class="nav-link" id="educationLink">Education</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container-fluid" style="background-color: #1e1e24;">
+
         <div class="row">
-            <div class="sidebar hideOnMob">
-
-                <!-- <div class="col-3"> -->
-                <a onclick="goToSection('home')" id="homeLink">Home</a>
-                <a onclick="goToSection('about')" id="aboutLink">About</a>
-                <!-- <a href="#" id="aboutLink">Education</a> -->
-                <a onclick="goToSection('skills')" id="skillsLink">Skills</a>
-                <a onclick="goToSection('projects')" id="proLink">Projects</a>
-                <a onclick="goToSection('education')" id="educationLink">Education</a>
-                <!-- </div> -->
-
-            </div>
-            <div class="col-md-3 hideOnMob"></div>
-            <div class="col">
-                <div id="Home" class="container  my-5" style="min-height: 70vh;">
+            <!-- <div class="col-md-3 hideOnMob"></div> -->
+            <div class="col-md-12" style="position: relative;">
+                <!-- <div class="sidebar hideOnMob">
+                    <a onclick="goToSection('home')" id="homeLink">Home</a>
+                    <a onclick="goToSection('about')" id="aboutLink">About</a>
+                    <a onclick="goToSection('skills')" id="skillsLink">Skills</a>
+                    <a onclick="goToSection('projects')" id="proLink">Projects</a>
+                    <a onclick="goToSection('education')" id="educationLink">Education</a>
+                </div> -->
+                <div id="Home" class="container   my-5" style="min-height: 70vh;">
                     <div class="row justify-content-around" style="margin-top: 14%;">
-                        <div class="col align-item-center d-flex justify-content-center showOnMob">
+                        <div class="col-md-2 align-item-center d-flex justify-content-center showOnMob">
                             <div style="border-radius: 100%;width: 100%;display: flex;justify-content: center;">
                                 <img style="border-radius: 100%;height: 90%;width: 80%;" src="./assets/dp.jpeg" />
                             </div>
                         </div>
-                        <div class=" d-flex justify-content-center column flex-column mx-5">
+                        <div class="col-md-6 d-flex justify-content-center column flex-column ml-5">
                             <h2 class="text-left" style="color:white;font-weight: normal;">Govind VE</h2>
                             <h3 class="text-left" style="color:white;font-weight: normal;">Software Developer</h3>
                             <h5 id="experience" class="text-left" style="color:white;font-weight: normal;">Experience: 2.5 years </h5>
@@ -70,18 +97,18 @@
                             </div>
 
                         </div>
-                        <div class="col-sm-4 align-item-center d-flex justify-content-center hideOnMob">
-                            <div style="border-radius: 100%;height: 90%;width: 100%;border: 3px solid #4d2c3b;">
+                        <div class="col-md-4 align-item-center d-flex justify-content-center hideOnMob">
+                            <div style="border-radius: 100%;height: 90%;width: 100%;border: 3px solid #24527a;">
                                 <img style="border-radius: 100%;height: 100%;width: 100%;" src="./assets/dp.jpeg" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row" style="min-height: 50vh;display: flex;align-items: center;">
-                    <div>
+                    <div style="background-color: #1e1e24;width:inherit">
 
-                        <div class="jumbotron jumbotron-fluid">
-                            <div class="container">
+                        <div class="jumbotron jumbotronAbout">
+                            <div class="col-md-12">
                                 <h1 id="About" class="display-4">About me</h1>
                                 <p class="lead">I am a software developer who wish to obtain a responsible, challenging,
                                     and awarding position in a software development organization with an established
@@ -91,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="min-height: 60vh;">
+                <div class="row" style="min-height: 40vh;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
                             <h3 id="Skills" class="text-center mb-3" style="color:white;font-weight: normal;">Skills
@@ -192,7 +219,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="background-color: #4d2c3b;min-height: 70vh;">
+                <div class="row" style="background-color: #24527a;min-height: 70vh;background-image:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #24527a), url('./assets/background1.jpg');background-attachment: fixed;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
                             <h3 id="Projects" class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
@@ -200,7 +227,9 @@
                             <div class="row" id="projectList">
 
                             </div>
-
+                            <div class="d-flex align-center justify-content-center mb-4">
+                                 <button class="btn" style="background-color: #24527a;color:#fff;text-align: center;" id="viewMoreButton" onclick="addProjectCards(true)">View more</button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -12,13 +12,29 @@ var skillsLink = document.getElementById('skillsLink')
 var proLink = document.getElementById('proLink')
 var educationLink = document.getElementById('educationLink')
 var currentIndex = 0;
-
+var viewMore = false;
 var projectList = [
 {
     name:'Xcelerator App',
     description:`Xcelerator app(Exn app) is a hybrid mobile application developed using react native.Its a learning application as well as job seeking application which allows user to build a portfolio of skills aligned to their career aspirations .`,
     descriptionHtml:`
     Xcelerator app(Exn app) is a hybrid mobile application developed using react native.Its a learning application as well as job seeking application which allows user to build a portfolio of skills aligned to their career aspirations .
+    <br><br>
+    <ul>
+    <li>Custom component architecture. </li>
+    <li>We have made the whole project into screens, module components and element components.</li>
+    <li>Redux architecture for state management.</li>
+    <li>We have used redux thunk which will give more flexibility.</li>
+    <li>We have used axios for server side interactions.</li>
+    </ul>
+    `,
+    languages:[languagesConstants.reactnative]
+},
+{
+    name:'BizgoJi App',
+    description:`Bizgoji app(Exn app) is a hybrid mobile application developed using react native.Its a bussiness application for Traders and Wholesalers .`,
+    descriptionHtml:`
+    Bizgoji app(Exn app) is a hybrid mobile application developed using react native.Its a bussiness application for Traders and Wholesalers .
     <br><br>
     <ul>
     <li>Custom component architecture. </li>
@@ -209,33 +225,36 @@ getCurrentActiveClass = () => {
 
 setActiveLink = (el, linkEl) => {
     if(elementInViewport(el)) {
-        linkEl.className  = 'active'; 
+        linkEl.className  = ' nav-link active'; 
         currentActiveElement = el;
     } else {
-        linkEl.className  = ''; 
+        linkEl.className  = 'nav-link'; 
     }
 }
 
 checkOnlyOne = () => {
-    if(skillsLink.className === 'active') {
+    if(skillsLink.className === 'nav-link active') {
         aboutLink.className = '';
     }
-    if(aboutLink.className ==='active') {
+    if(aboutLink.className ==='nav-link active') {
         homeLink.className = ''
     }
     if(currentActiveElement===skills) {
-        skillsLink.className = 'active';
+        skillsLink.className = 'nav-link active';
     }
     if(currentActiveElement===projects) {
-        proLink.className = 'active';
+        proLink.className = 'nav-link active';
     }
     if(currentActiveElement===education) {
-        educationLink.className = 'active';
+        educationLink.className = ' nav-link active';
     }
 }
 
-addProjectCards = () => {
-    projectList.forEach((item, index) => {
+addProjectCards = (viewMoreOption=false) => {
+    document.getElementById('projectList').innerHTML = '';
+    let renderLists = viewMore==false?projectList.slice(0,6):projectList;
+    viewMore = renderLists.length !== projectList.length;
+    renderLists.forEach((item, index) => {
         var languages = '<h6 style="height:30px" class="card-subtitle mb-2 text-muted">';
         item.languages.forEach((lang, langIndex) => {
             languages = languages + lang.name + `<img src="${lang.url}"
@@ -253,11 +272,13 @@ addProjectCards = () => {
                             <button onclick=\"openDetails(${index})\" class="btn btn-dark form-control" style="color: aliceblue;">More details</button>
                             </div>
                         </div>
-                    </div>`
+                    </div>`;
     const ele = document.createElement('div');
     ele.innerHTML = card;
+    document.getElementById('viewMoreButton').innerHTML = viewMore?'View More':'View Less';
     document.getElementById('projectList').appendChild(ele.firstChild);
-    });                              
+    });
+    viewMore==true?goToSection('projects'):null;
 }
 
 function openDetails(index) {
@@ -343,7 +364,7 @@ function checkExperience() {
     var hour = Math.floor(min/60);
     var days = Math.floor(hour/24);
     var months = Math.floor(days/30);
-    var years = months/12;
+    var years = (months/12).toString().substr(0,3);
     var element = document.getElementById('experience');
     element.innerText = "Experience: " + years + " years";
     console.log(years);
