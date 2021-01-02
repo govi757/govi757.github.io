@@ -366,7 +366,7 @@ function checkExperience() {
     var months = Math.floor(days/30);
     var years = (months/12).toString().substr(0,3);
     var element = document.getElementById('experience');
-    element.innerText = "Experience: " + years + " years";
+    element.innerText = "Experience: " + years.toString().substr(0,3) + " years";
     console.log(years);
 }
 
