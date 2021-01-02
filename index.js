@@ -250,6 +250,7 @@ checkOnlyOne = () => {
     }
 }
 
+
 addProjectCards = (viewMoreOption=false) => {
     document.getElementById('projectList').innerHTML = '';
     let renderLists = viewMore==false?projectList.slice(0,6):projectList;

@@ -18,7 +18,7 @@
     <script src="./constant.js" lang="js"></script>
 </head>
 
-<body onscroll="getCurrentActiveClass()" >
+<body onscroll="getCurrentActiveClass()" style="background-color: #1e1e24;" >
     <noscript>
         <strong>We're sorry but ok doesn't work properly without JavaScript enabled. Please enable it to
             continue.</strong>
@@ -48,11 +48,11 @@
           </ul>
         </div>
       </nav>
-    <div class="container-fluid" style="background-color: #1e1e24;">
+    <div class="container-fluid">
 
-        <div class="row">
+        <div class="row" >
             <!-- <div class="col-md-3 hideOnMob"></div> -->
-            <div class="col-md-12" style="position: relative;">
+            <div class="col-md-12" style="position: relative;margin-top: 10vh;">
                 <!-- <div class="sidebar hideOnMob">
                     <a onclick="goToSection('home')" id="homeLink">Home</a>
                     <a onclick="goToSection('about')" id="aboutLink">About</a>
@@ -62,12 +62,12 @@
                 </div> -->
                 <div id="Home" class="container   my-5" style="min-height: 70vh;">
                     <div class="row justify-content-around" style="margin-top: 14%;">
-                        <div class="col-md-2 align-item-center d-flex justify-content-center showOnMob">
+                        <div class="col-md-3 align-item-center d-flex justify-content-center showOnMob">
                             <div style="border-radius: 100%;width: 100%;display: flex;justify-content: center;">
                                 <img style="border-radius: 100%;height: 90%;width: 80%;" src="./assets/dp.jpeg" />
                             </div>
                         </div>
-                        <div class="col-md-6 d-flex justify-content-center column flex-column ml-5">
+                        <div class="col-md-4 d-flex justify-content-center column flex-column ml-5">
                             <h2 class="text-left" style="color:white;font-weight: normal;">Govind VE</h2>
                             <h3 class="text-left" style="color:white;font-weight: normal;">Software Engineer</h3>
                             <h5 id="experience" class="text-left" style="color:white;font-weight: normal;">Experience: 2.5 years </h5>
@@ -97,34 +97,32 @@
                             </div>
 
                         </div>
-                        <div class="col-md-4 align-item-center d-flex justify-content-center hideOnMob">
+                        <div class="col-md-5 align-item-center d-flex justify-content-center hideOnMob">
                             <div style="border-radius: 100%;height: 90%;width: 100%;border: 3px solid #24527a;">
                                 <img style="border-radius: 100%;height: 100%;width: 100%;" src="./assets/dp.jpeg" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row" style="min-height: 50vh;display: flex;align-items: center;">
-                    <div style="background-color: #1e1e24;width:inherit">
-
-                        <div class="jumbotron jumbotronAbout">
-                            <div class="col-md-12">
-                                <h1 id="About" class="display-4">About me</h1>
-                                <p class="lead">I am a software developer who wish to obtain a responsible, challenging,
+                        <div class="jumbotron jumbotron-fluid jumbotronAbout row">
+                                <div class="container">
+                                    <h1 id="About" class="display-4 mx-5">About me</h1>
+                                <p class="lead mx-5">I am a software developer who wish to obtain a responsible, challenging,
                                     and awarding position in a software development organization with an established
                                     record of accomplishment where my skills, abilities and technical abilities can be
                                     utilized.</p>
-                            </div>
-                        </div>
-                    </div>
+                                </div>
+                                <p></p>
                 </div>
                 <div class="row" style="min-height: 40vh;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
                             <h3 id="Skills" class="text-center mb-3" style="color:white;font-weight: normal;">Skills
                             </h3>
-                            <!-- <h5 class="text-left mb-5" style="color:white;font-weight: normal;"> My working experience covers a wide variety of project scopes including product design, mobile apps, theme development and woocommerce. I spent my very first years of life learning visual language. It is a long established fact that a reader will be distracted, when looking at its layout. Various versions have evolved over the years.</h5> -->
-                            <div class="row wrap mb-5">
+                            <h5 id="experienceText" class="text-center mb-2" style="color:white;font-weight: normal;"> Have experience in veriety of programmic languages mostly focused on front end Frameworks such as react, angular , vue</h5>
+                            
+                            <!-- <hr style="background: white"> -->
+                            <div class="row wrap mb-2">
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
                                     <img src="https://img.icons8.com/nolan/64/html.png" class="imgIcons imgIconsMob" />
@@ -150,6 +148,18 @@
                                         JavaScript
                                     </h5>
                                 </div>
+
+
+                                <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
+                                    <img src="https://img.icons8.com/dusk/96/000000/java-coffee-cup-logo.png"
+                                        class="imgIcons imgIconsMob" />
+                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
+                                        Java
+                                    </h5>
+                                </div>
+                            </div>
+                            <!-- <hr style="background: white"> -->
+                            <div class="row wrap mb-5">
 
 
 
@@ -197,13 +207,6 @@
                                 </div>
 
 
-                                <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
-                                    <img src="https://img.icons8.com/dusk/96/000000/java-coffee-cup-logo.png"
-                                        class="imgIcons imgIconsMob" />
-                                    <h5 class="imgIconHeadMob imgIconHeadWeb">
-                                        Java
-                                    </h5>
-                                </div>
 
                                 <div class="col-3 d-flex flex-column  justify-content-center align-items-center">
                                     <img src="https://img.icons8.com/color/96/000000/nodejs.png"
@@ -219,7 +222,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="background-color: #24527a;min-height: 70vh;background-image:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #24527a), url('./assets/background1.jpg');background-attachment: fixed;">
+                <div class="row jumbotronAbout" style="background-color: #24527a;min-height: 70vh;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
                             <h3 id="Projects" class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
@@ -233,7 +236,17 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- <div class="row mb-4" style="min-height: 60vh;">
+                    <div class="container" style="width: 90%;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                        <h3 id="Education" class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
+                            Contact me</h3>
+                            <div class="col-sm-6">
+                            <input type="text" class="form-control my-3" placeholder="Name"/>
+                            <input type="text" class="form-control my-3" placeholder="E-mail"/>
+                            <textarea class="form-control" placeholder="Message"></textarea>>
+                        </div>
+                        </div>
+                </div> -->
                 <div class="row mb-4" style="min-height: 60vh;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
