@@ -164,12 +164,12 @@ a {
 
 @keyframes opacityAnim {
     0% {
-      opacity: -10;
+      /* opacity: -10; */
       transform: translateX(0px);
     }
 
     25% {
-        opacity: 1;
+        /* opacity: 1; */
         transform: translateX(40px);
       }
       50% {
@@ -195,7 +195,7 @@ a {
 }
 .activeTab {
     border-bottom: 1px solid #24527a;
-    animation: positionAnimation 0.5s linear
+    animation: opacityAnim 0.5s linear
 }
 .tab div {
     cursor: pointer;
