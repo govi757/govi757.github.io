@@ -254,6 +254,7 @@ checkOnlyOne = () => {
 
 
 addProjectCards = (viewMoreOption=false) => {
+    document.getElementById('viewMoreButton').style.display = 'block';
     document.getElementById('projectList').innerHTML = '';
     let renderLists = viewMore==false?projectList.slice(0,6):projectList;
     viewMore = projectList.length<=6 || renderLists.length !== projectList.length;
@@ -278,6 +279,9 @@ addProjectCards = (viewMoreOption=false) => {
                     </div>`;
     const ele = document.createElement('div');
     ele.innerHTML = card;
+    if(projectList.length<=6) {
+        document.getElementById('viewMoreButton').style.display = 'none';
+    }
     document.getElementById('viewMoreButton').innerHTML = viewMore?'View More':'View Less';
     document.getElementById('projectList').appendChild(ele.firstChild);
     });
@@ -288,7 +292,7 @@ selectProject = (opt) => {
     document.querySelector('#projectTab>div>div.activeTab').className='';
     const tab = document.getElementById(opt);
     tab.className = 'activeTab';
-    viewMore = true;
+    viewMore = false;
     if(opt === 'all') {
         projectList = allProjectList;
         tab.classList.add()
