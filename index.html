@@ -227,6 +227,26 @@
                         <div class="col-12 ">
                             <h3 id="Projects" class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
                                 Projects</h3>
+                            <div id="projectTab" class="tab row d-flex flex-row justify-content-center" style="color:white">
+                                <div onclick="selectProject('all')" style="margin: 10px;">
+                                    <h4>All</h4>
+                                    <div id="all" class="activeTab"></div>
+                                </div>
+
+                                <div onclick="selectProject('mobile')" style="margin: 10px;">
+                                    <h4>Mobile Apps</h4>
+                                    <div id="mobile" ></div>
+                                </div>
+                                
+                                <div onclick="selectProject('web')" style="margin: 10px;">
+                                    <h4>Web Apps</h4>
+                                    <div id="web" ></div>
+                                </div>
+                                <div onclick="selectProject('others')" style="margin: 10px;">
+                                    <h4>Others</h4>
+                                    <div id="others" ></div>
+                                </div>
+                            </div>    
                             <div class="row" id="projectList">
 
                             </div>

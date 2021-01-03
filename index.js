@@ -13,7 +13,7 @@ var proLink = document.getElementById('proLink')
 var educationLink = document.getElementById('educationLink')
 var currentIndex = 0;
 var viewMore = false;
-var projectList = [
+var allProjectList = [
 {
     name:'Xcelerator App',
     description:`Xcelerator app(Exn app) is a hybrid mobile application developed using react native.Its a learning application as well as job seeking application which allows user to build a portfolio of skills aligned to their career aspirations .`,
@@ -202,6 +202,8 @@ var projectList = [
 
 ]
 
+var projectList = allProjectList;
+
 window.onload = () => {
     addProjectCards();
 }
@@ -254,7 +256,7 @@ checkOnlyOne = () => {
 addProjectCards = (viewMoreOption=false) => {
     document.getElementById('projectList').innerHTML = '';
     let renderLists = viewMore==false?projectList.slice(0,6):projectList;
-    viewMore = renderLists.length !== projectList.length;
+    viewMore = projectList.length<=6 || renderLists.length !== projectList.length;
     renderLists.forEach((item, index) => {
         var languages = '<h6 style="height:30px" class="card-subtitle mb-2 text-muted">';
         item.languages.forEach((lang, langIndex) => {
@@ -262,7 +264,7 @@ addProjectCards = (viewMoreOption=false) => {
                             height="20px" width="20px" />`+ ((langIndex<item.languages.length-1)?', ':'')
         })
         languages = languages + '</h6>'
-        var card = `<div class="col-md-4 my-3" style="min-height:100%">
+        var card = `<div class=" projectCard col-md-4 my-3" style="min-height:100%">
                             <div class="card" style="min-height:100%">
                             <div class="card-body">
                             <h5 class="card-title">${item.name}</h5>
@@ -280,6 +282,36 @@ addProjectCards = (viewMoreOption=false) => {
     document.getElementById('projectList').appendChild(ele.firstChild);
     });
     viewMore==true&&viewMoreOption==true?goToSection('projects'):null;
+}
+
+selectProject = (opt) => {
+    document.querySelector('#projectTab>div>div.activeTab').className='';
+    const tab = document.getElementById(opt);
+    tab.className = 'activeTab';
+    viewMore = true;
+    if(opt === 'all') {
+        projectList = allProjectList;
+        tab.classList.add()
+    } else if(opt === 'mobile') {
+        projectList = allProjectList.filter(itm => {
+            return(
+                itm.languages.includes(languagesConstants.reactnative) || itm.languages.includes(languagesConstants.flutter)
+            )
+        });
+    } else if(opt === 'web') {
+        projectList = allProjectList.filter(itm => {
+            return(
+                itm.languages.includes(languagesConstants.html) || itm.languages.includes(languagesConstants.angular) || itm.languages.includes(languagesConstants.html)||itm.languages.includes(languagesConstants.react)
+            )
+        });
+    } else if(opt === 'others') {
+        projectList = allProjectList.filter(itm => {
+            return(
+                itm.languages.includes(languagesConstants.java) 
+            )
+        });
+    }
+    addProjectCards();
 }
 
 function openDetails(index) {
