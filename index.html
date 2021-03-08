@@ -6,13 +6,13 @@
     <!-- <img src="./assets/goviLogo.png" style="width: 60px;height:30px"/> -->
     <link rel="icon" href="./assets/logo.png"/>
     <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./index.css" />
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./constant.js" lang="js"></script>
@@ -32,8 +32,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li onclick="goToSection('about')" class="nav-item active">
+          <ul class="navbar-nav mr-auto">
+            <li onclick="goToSection('about')" class="nav-item">
               <a class="nav-link" id="aboutLink">About <span class="sr-only">(current)</span></a>
             </li>
             <li  onclick="goToSection('skills')" class="nav-item">
@@ -42,10 +42,17 @@
             <li onclick="goToSection('projects')" class="nav-item">
               <a class="nav-link" id="proLink">Projects</a>
             </li>
-            <li onclick="goToSection('education')" class="nav-item">
+            <!-- <li onclick="goToSection('education')" class="nav-item">
                 <a class="nav-link" id="educationLink">Education</a>
-              </li>
+            </li> -->
+
           </ul>
+          <ul class="form-inline my-2 my-lg-0">
+            
+          <li class="nav-item" style="border: 1px solid #3172aa;border-radius: 10px;">
+            <a href="https://drive.google.com/u/0/uc?id=1X4atkBHduuUcqEPRByx5tBxQ7gfYgj-r&export=download" class="nav-link" id="educationLink">Resume</a>
+        </li>
+    </ul>
         </div>
       </nav>
     <div class="container-fluid">
@@ -104,9 +111,9 @@
                         </div>
                     </div>
                 </div>
-                        <div class="jumbotron jumbotron-fluid jumbotronAbout row">
+                        <div  id="About" class="jumbotron jumbotron-fluid jumbotronAbout row">
                                 <div class="container">
-                                    <h1 id="About" class="display-4 mx-5">About me</h1>
+                                    <h1 class="display-4 mx-5">About me</h1>
                                 <p class="lead mx-5">I am a software developer who wish to obtain a responsible, challenging,
                                     and awarding position in a software development organization with an established
                                     record of accomplishment where my skills, abilities and technical abilities can be
@@ -115,9 +122,9 @@
                                 <p></p>
                 </div>
                 <div class="row" style="min-height: 40vh;">
-                    <div class="container" style="width: 90%;">
+                    <div id="Skills" class="container" style="width: 90%;">
                         <div class="col-12 ">
-                            <h3 id="Skills" class="text-center mb-3" style="color:white;font-weight: normal;">Skills
+                            <h3 class="text-center mb-3" style="color:white;font-weight: normal;">Skills
                             </h3>
                             <h5 id="experienceText" class="text-center mb-2" style="color:white;font-weight: normal;"> Have experience in veriety of programmic languages mostly focused on front end Frameworks such as react, angular , vue</h5>
                             
@@ -222,10 +229,10 @@
                     </div>
                 </div>
 
-                <div class="row jumbotronAbout" style="background-color: #24527a;min-height: 70vh;">
+                <div  class="row jumbotronAbout" style="background-color: #24527a;min-height: 70vh;">
                     <div class="container" style="width: 90%;">
-                        <div class="col-12 ">
-                            <h3 id="Projects" class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
+                        <div  class="col-12 ">
+                            <h3 id="Projects"  class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
                                 Projects</h3>
                             <div id="projectTab" class="tab row d-flex flex-row justify-content-center" style="color:white">
                                 <div onclick="selectProject('all')" style="margin: 10px;">
@@ -267,7 +274,7 @@
                         </div>
                         </div>
                 </div> -->
-                <div class="row mb-4" style="min-height: 60vh;">
+                <!-- <div class="row mb-4" style="min-height: 60vh;">
                     <div class="container" style="width: 90%;">
                         <div class="col-12 ">
                             <h3 id="Education" class="text-center mt-4 mb-3" style="color:white;font-weight: normal;">
@@ -298,7 +305,8 @@
                             
                         </div>
                     </div>
-                </div>
+                </div> -->
+                <div></div>
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
 

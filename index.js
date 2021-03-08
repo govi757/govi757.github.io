@@ -1,19 +1,36 @@
 
 
+var aboutLink = document.getElementById('aboutLink');
+var homeLink = document.getElementById('homeLink')
+var skillsLink = document.getElementById('skillsLink')
+var proLink = document.getElementById('proLink')
+var educationLink = document.getElementById('educationLink')
+
 var about = document.getElementById('About')
 var home = document.getElementById('Home')
 var skills = document.getElementById('Skills')
 var projects = document.getElementById('Projects')
 var education = document.getElementById('Education')
 
-var aboutLink = document.getElementById('aboutLink');
-var homeLink = document.getElementById('homeLink')
-var skillsLink = document.getElementById('skillsLink')
-var proLink = document.getElementById('proLink')
-var educationLink = document.getElementById('educationLink')
 var currentIndex = 0;
 var viewMore = false;
 var allProjectList = [
+    {
+        name:'Bizgo EasyKhata App',
+        description:`BIZGO EasyKhata (easy Ledger Account Book) - Replace your traditional Udhar bahi khata with a new digital ledger book`,
+        descriptionHtml:`
+        Any business can use the app to record credit (Jama), debit (Udhaar), cash and bank transactions for their existing or new customers. Also share your product catalogue on WhatsApp or any other app
+        <br><br>
+        <ul>
+        <li>Custom component architecture. </li>
+        <li>We have made the whole project into screens, module components and element components.</li>
+        <li>Redux architecture for state management.</li>
+        <li>We have used redux thunk which will give more flexibility.</li>
+        <li>We have used axios for server side interactions.</li>
+        </ul>
+        `,
+        languages:[languagesConstants.reactnative]
+    },
 {
     name:'Xcelerator App',
     description:`Xcelerator app(Exn app) is a hybrid mobile application developed using react native.Its a learning application as well as job seeking application which allows user to build a portfolio of skills aligned to their career aspirations .`,
@@ -222,16 +239,19 @@ getCurrentActiveClass = () => {
     setActiveLink(skills, skillsLink);
     setActiveLink(projects, proLink);
     setActiveLink(education, educationLink);
-    // checkOnlyOne();
+    checkOnlyOne();
 }
 
 setActiveLink = (el, linkEl) => {
+    if(el !==null) {
     if(elementInViewport(el)) {
+        el.style.opacity = 1;
         linkEl.className  = ' nav-link active'; 
         currentActiveElement = el;
     } else {
         linkEl.className  = 'nav-link'; 
     }
+}
 }
 
 checkOnlyOne = () => {
@@ -360,22 +380,22 @@ function closeDetails() {
 
 function elementInViewport(el) {
     var top = el.offsetTop;
-    var left = el.offsetLeft;
-    var width = el.offsetWidth;
-    var height = el.offsetHeight;
+  var left = el.offsetLeft;
+  var width = el.offsetWidth;
+  var height = el.offsetHeight;
 
-    while(el.offsetParent) {
-        el = el.offsetParent;
-        top += el.offsetTop;
-        left += el.offsetLeft;
-    }
+  while(el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+    left += el.offsetLeft;
+  }
 
-    return (
-        top >= window.pageYOffset &&
-        left >= window.pageXOffset &&
-        (top + height) <= (window.pageYOffset + window.innerHeight) &&
-        (left + width) <= (window.pageXOffset + window.innerWidth)
-    );
+  return (
+    top >= window.pageYOffset &&
+    left >= window.pageXOffset &&
+    (top + height) <= (window.pageYOffset + window.innerHeight) &&
+    (left + width) <= (window.pageXOffset + window.innerWidth)
+  );
 }
 function goToSection(item) {
     if(item == 'home') {
