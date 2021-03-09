@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "ubuntuBold";
+    src: url('./assets/fonts/Ubuntu/Ubuntu-Regular.ttf');
+}
+
+body {
+    /* font-family: 'ubuntuBold'; */
+}
+
 .navbar-item {
     margin-right: 30px;
     padding-top: 10px;
@@ -200,22 +209,28 @@ a {
 .tab div {
     cursor: pointer;
 }
-#About {
-    opacity: 0;
+/* #About {
+    opacity: 0.1;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
 }
 #Skills {
-    opacity: 0;
+    opacity: 0.1;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
 }
 
 #Projects {
-    opacity: 0;
+    opacity: 1;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
+} */
+
+
+.hideme
+{
+    opacity:0;
 }

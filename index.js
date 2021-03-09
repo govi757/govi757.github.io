@@ -12,8 +12,10 @@ var skills = document.getElementById('Skills')
 var projects = document.getElementById('Projects')
 var education = document.getElementById('Education')
 
+home.scrollIntoView({behavior: 'smooth', block: 'center' });
 var currentIndex = 0;
 var viewMore = false;
+var projectLoaded = false;
 var allProjectList = [
     {
         name:'Bizgo EasyKhata App',
@@ -234,19 +236,21 @@ function isHidden(el) {
 }
 
 getCurrentActiveClass = () => {
+    if(projectLoaded === true) {
     setActiveLink(about, aboutLink);
     setActiveLink(home, homeLink);
     setActiveLink(skills, skillsLink);
-    setActiveLink(projects, proLink);
+    // setActiveLink(projects, proLink);
     setActiveLink(education, educationLink);
-    checkOnlyOne();
+    }
+    // checkOnlyOne();
 }
 
 setActiveLink = (el, linkEl) => {
     if(el !==null) {
     if(elementInViewport(el)) {
-        el.style.opacity = 1;
-        linkEl.className  = ' nav-link active'; 
+        // el.style.opacity = 1;
+        // linkEl.className  = ' nav-link active'; 
         currentActiveElement = el;
     } else {
         linkEl.className  = 'nav-link'; 
@@ -285,7 +289,7 @@ addProjectCards = (viewMoreOption=false) => {
                             height="20px" width="20px" />`+ ((langIndex<item.languages.length-1)?', ':'')
         })
         languages = languages + '</h6>'
-        var card = `<div class=" projectCard col-md-4 my-3" style="min-height:100%">
+        var card = `<div class="projectCard col-md-4 my-3" style="min-height:100%">
                             <div class="card" style="min-height:100%">
                             <div class="card-body">
                             <h5 class="card-title">${item.name}</h5>
@@ -306,6 +310,7 @@ addProjectCards = (viewMoreOption=false) => {
     document.getElementById('projectList').appendChild(ele.firstChild);
     });
     viewMore==true&&viewMoreOption==true?goToSection('projects'):null;
+    projectLoaded = true;
 }
 
 selectProject = (opt) => {
