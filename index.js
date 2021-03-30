@@ -114,34 +114,34 @@ var allProjectList = [
     `,
 },
 
-{
-    name:'Online Design Tool',
-    description:' Its a Design tool which is use full for the developers and designers to design a website and get the code for that.',
-    languages:[languagesConstants.react,languagesConstants.nodejs],
-    descriptionHtml:`
-    Its a Design tool which is use full for the developers and designers to design a website and get the code for that.
-    <br><br>
-    <ul>
-    <li>We can create design just by drag and drop</li>
-    <li>After creation we will be able to see the styles of that particular component.</li>
-    </ul>
-    `,
-},
+// {
+//     name:'Online Design Tool',
+//     description:' Its a Design tool which is use full for the developers and designers to design a website and get the code for that.',
+//     languages:[languagesConstants.react,languagesConstants.nodejs],
+//     descriptionHtml:`
+//     Its a Design tool which is use full for the developers and designers to design a website and get the code for that.
+//     <br><br>
+//     <ul>
+//     <li>We can create design just by drag and drop</li>
+//     <li>After creation we will be able to see the styles of that particular component.</li>
+//     </ul>
+//     `,
+// },
     
-{
-    name:'VVFrameWork',
-    description:`Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.`,
-    descriptionHtml:`
-    Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.
-    <br><br>
-    <ul>
-    <li>Creation of Screens and components will happen from a single place.</li>
-    <li>Writing apis and its redux flow becomes simplified.</li>
-    <li>All the apis can be listed in one file with more readable format.</li>
-    </ul>
-    `,
-    languages:[languagesConstants.java]
-},
+// {
+//     name:'VVFrameWork',
+//     description:`Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.`,
+//     descriptionHtml:`
+//     Its a simple framework written in java which will create and write the react-js code based on the code written in .vv file.
+//     <br><br>
+//     <ul>
+//     <li>Creation of Screens and components will happen from a single place.</li>
+//     <li>Writing apis and its redux flow becomes simplified.</li>
+//     <li>All the apis can be listed in one file with more readable format.</li>
+//     </ul>
+//     `,
+//     languages:[languagesConstants.java]
+// },
 {
     name:'Storybook App',
     description:' Its a reactnative app which will allows you to read and write stories,poems etc.Its a  good platform to display your writing skills.',
@@ -202,21 +202,21 @@ var allProjectList = [
     `,
 },
 
-{
-    name:'Staffroom App',
-    description:' Staffroom app is a hybrid mobile app developed for managing the students in a class which can be used by professors.We can mark the attendance , internal marks of the students etc using this. We will get the whole details in excel format. Its easy to find the students who has less attendance and internal marks using this and there by student management becomes easier.',
-    languages:[languagesConstants.flutter],
-    descriptionHtml:`
-    Staffroom app is a hybrid mobile app developed for managing the students in a class which can be used by professors.We can mark the attendance , internal marks of the students etc using this. We will get the whole details in excel format. Its easy to find the students who has less attendance and internal marks using this and there by student management becomes easier.
-    <br><br>
-    <ul>
-    <li>Custom component architecture .</li>
-    <li>Every small pieces of this app is created as components which includes text, buttons etc.</li>
-    <li>We are using scoped model for state management.</li>
-    <li>We are using shared preferences for storing the details in the phone itself. </li>
-    </ul>
-    `,
-},
+// {
+//     name:'Staffroom App',
+//     description:' Staffroom app is a hybrid mobile app developed for managing the students in a class which can be used by professors.We can mark the attendance , internal marks of the students etc using this. We will get the whole details in excel format. Its easy to find the students who has less attendance and internal marks using this and there by student management becomes easier.',
+//     languages:[languagesConstants.flutter],
+//     descriptionHtml:`
+//     Staffroom app is a hybrid mobile app developed for managing the students in a class which can be used by professors.We can mark the attendance , internal marks of the students etc using this. We will get the whole details in excel format. Its easy to find the students who has less attendance and internal marks using this and there by student management becomes easier.
+//     <br><br>
+//     <ul>
+//     <li>Custom component architecture .</li>
+//     <li>Every small pieces of this app is created as components which includes text, buttons etc.</li>
+//     <li>We are using scoped model for state management.</li>
+//     <li>We are using shared preferences for storing the details in the phone itself. </li>
+//     </ul>
+//     `,
+// },
 // VITA Web
 
 ]
